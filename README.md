@@ -1,4 +1,4 @@
-# Hackng HackMD Batch Image Downloader and Converter
+# hackng 
 
 This is a command line tool to convert HackMD markdown files to PDF format, with the ability to download images linked in the markdown files and replace the links with the downloaded image names.
 
