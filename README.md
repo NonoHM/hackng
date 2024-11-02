@@ -42,7 +42,7 @@ For windows, the venv activation is:
 To use the tool, you can run the following command:
 
 ```bash
-python hackng.py [options]
+python main.py [options]
 ```
 
 Where `[options]` are the following:
@@ -51,7 +51,7 @@ Where `[options]` are the following:
 - `-d, --directory`: The directory where the HackMD markdown files are located.
 - `-r, --recursive`: Search for HackMD markdown files in the directory and subdirectories.
 - `--replace-image-liquid`: Convert markdown images to Liquid tags (used for nonohm.io)
-- `--new-base-path`: New base path for images without altering filenames (e.g., ./images -> /assets/images)
+- `--new-base-path`: New base path for images without altering filenames (e.g., ./images -> /assets/images). Does not move the images.
 - `-nd, --no-download`: Do not download images.
 - `-nl, --no-link`: Do not change links to the image's names.
 - `-s, --skip`: Skip the download and link change process.
@@ -63,21 +63,27 @@ Where `[options]` are the following:
 To only download the images and change the links in `example.md` file:
 
 ```bash
-python hackng.py -f ./example.md
+python main.py -f ./example.md
 ```
 
-The images will be downloaded in `./images/example` directory.
+The images will be downloaded in `./images/example` directory by default.
 
 To convert all HackMD markdown files in a directory named `markdown_files` to PDF format and download and replace the linked images, you can run the following command:
 
 ```bash
-hackmd-png-to-pdf -d ~/markdown_files -pdf [-r]
+python main.py -d ~/markdown_files -pdf [-r]
 ```
 
 To convert a HackMD markdown file named `example.md` to PDF format and download and replace the linked images, you can run the following command:
 
 ```bash
-python hackng.py -f ./example.md -pdf -a toc template=template.latex 
+python main.py -f ./example.md -pdf -a toc template=template.latex 
+```
+
+To modify the base path of where the images are located, you can run the following command:
+
+``` bash
+python main.py -f ./example.md --new-base-path "/assets/images/"
 ```
 
 ## Requirements

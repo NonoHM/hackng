@@ -16,13 +16,18 @@ def directory_searcher(args):
                     path = os.path.join(root, file)
                     downloader(path, args)
                     pdf_converter(path, args)
+                    update_image_paths(path, args)
+                    convert_markdown_to_liquid(path, args)
+                    
     else:
         for file in os.listdir(files_directory):
             if file.endswith('.md'):
                 path = os.path.join(files_directory, file)
                 downloader(path, args)
                 pdf_converter(path, args)
-
+                update_image_paths(path, args)
+                convert_markdown_to_liquid(path, args)
+       
 def downloader(file_name, args):
     if args.skip:
         return

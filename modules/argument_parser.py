@@ -16,7 +16,7 @@ def parse_arguments():
     parser.add_argument('-r', '--recursive', action='store_true', help='search for .md files in the directory and subdirectories')
     
     parser.add_argument('--replace-image-liquid', action='store_true', help='convert markdown images to Liquid tags')
-    parser.add_argument('--new-base-path', help='new base path for images without altering filenames (e.g., ./images -> /assets/images)')
+    parser.add_argument('--new-base-path', help='new base path for images without altering filenames (e.g., ./images -> /assets/images). Does not move the images.')
     
     parser.add_argument('-nd', '--no-download', action='store_true', help='do not download images')
     parser.add_argument('-nl', '--no-link', action='store_true', help='do not change links')
