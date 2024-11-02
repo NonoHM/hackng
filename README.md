@@ -1,10 +1,10 @@
-# hackng 
+# hackng  
 
 This is a command line tool to convert HackMD markdown files to PDF format, with the ability to download images linked in the markdown files and replace the links with the downloaded image names.
 
 /!\ Important /!\
 
-For now, the hackmd notes should be published in order for the tool to download the images.
+For now, the hackmd notes should be published or with anyone read permissions in order for the tool to download the images.
 
 ## Installation
 
@@ -50,6 +50,8 @@ Where `[options]` are the following:
 - `-f, --file-name`: The file name of the HackMD markdown file to convert.
 - `-d, --directory`: The directory where the HackMD markdown files are located.
 - `-r, --recursive`: Search for HackMD markdown files in the directory and subdirectories.
+- `--replace-image-liquid`: Convert markdown images to Liquid tags (used for nonohm.io)
+- `--new-base-path`: New base path for images without altering filenames (e.g., ./images -> /assets/images)
 - `-nd, --no-download`: Do not download images.
 - `-nl, --no-link`: Do not change links to the image's names.
 - `-s, --skip`: Skip the download and link change process.
